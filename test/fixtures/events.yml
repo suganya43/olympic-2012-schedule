@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  sport_id: 1
+  date: 2012-07-24
+  time: 2012-07-24 11:03:35
+  venue: MyString
+  participants: MyText
+  winner: MyText
+  status: MyString
+
+two:
+  name: MyString
+  sport_id: 1
+  date: 2012-07-24
+  time: 2012-07-24 11:03:35
+  venue: MyString
+  participants: MyText
+  winner: MyText
+  status: MyString

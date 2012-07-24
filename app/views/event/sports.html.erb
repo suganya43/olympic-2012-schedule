@@ -1,0 +1,17 @@
+<html>
+<head>
+
+</head>
+<body>
+<h3> Sports </h3>
+<ul>
+<% if !@sports.nil?%>
+  <% @sports.each do |sport|%>
+     <li>
+     <%= sport.name%>
+	 </li>
+  <% end %>
+<% end %>
+</ul>
+</body>
+</html>

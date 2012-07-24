@@ -1,0 +1,15 @@
+<html>
+<head>
+
+</head>
+<body>
+<h3> Edit Event </h3>
+<ul>
+<% if !@event.nil? %>
+Sport Name : <%= Sport.find_by_id(@event[0].sport_id).name %> <br />
+Event : <%= @event[0].event_name %> <br />
+Round : <%= @event[0].round_name %> <br />
+<% end %>
+</ul>
+</body>
+</html>

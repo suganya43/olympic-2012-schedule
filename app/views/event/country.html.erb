@@ -1,0 +1,18 @@
+<html>
+<head>
+
+</head>
+<body>
+<h3> Country </h3>
+<ul>
+<% if !@countries.nil?%>
+  <% @countries.each do |country|%>
+     <li>
+     <%= country.name%> - <%= image_tag "countries/#{country.id}/#{country.name}.png"%>
+
+	 </li>
+  <% end %>
+<% end %>
+</ul>
+</body>
+</html>
