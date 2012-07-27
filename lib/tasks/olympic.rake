@@ -58,7 +58,7 @@ namespace :olympic_data do
 	
     p Venue = x1.cell(line,'G')
     p Medal = x1.cell(line,'H')
-	medal = Medal.gsub("-", " ") unless Medal.nil?
+	#medal = Medal.gsub("-", " ") unless Medal.nil?
     Event.create(:sport_id=>sports.id,:event_name=>name,:round_name=>Round,:date=>d,:time=>tempt,:venue=>Venue,:medal=>Medal,:end_date=>end_date)
 	end
    end

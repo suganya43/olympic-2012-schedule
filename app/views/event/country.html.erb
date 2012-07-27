@@ -8,7 +8,8 @@
 <% if !@countries.nil?%>
   <% @countries.each do |country|%>
      <li>
-     <%= country.name%> - <%= image_tag "countries/#{country.id}/#{country.name}.png"%>
+	 
+     <%= country.name%> - <%= image_tag "countries/#{country.name+'.svg.png'}"%>
 
 	 </li>
   <% end %>
