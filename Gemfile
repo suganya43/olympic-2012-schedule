@@ -9,6 +9,8 @@ gem 'pg'
 
 gem 'mongrel', '>= 1.2.0.pre2'
 
+gem 'roo'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

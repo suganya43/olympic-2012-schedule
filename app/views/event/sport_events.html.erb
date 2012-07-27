@@ -3,14 +3,17 @@
 
 </head>
 <body>
-<h3> Events </h3>
+<h3> <%= @sport.name %> Events </h3>
 <ul>
 <% if !@events.nil?%>
   <% @events.each do |event|%>
      <li>
 	 <%= Sport.find_by_id(event.sport_id).name %> ---
      <%= event.event_name %> ---
-	 <%= event.round_name %> 
+	 <%= event.round_name %> --- 
+	 <% if !event.medal.nil?%>
+	 <%= link_to "Edit Event" ,:controller=>"event",:action=>"event_edit" ,:id=> event.id%>
+	 <% end %>
 	 </li>
   <% end %>
 <% end %>

@@ -8,7 +8,7 @@
 <% if !@sports.nil?%>
   <% @sports.each do |sport|%>
      <li>
-     <%= sport.name%>
+      <%= link_to sport.name ,:controller=>"event",:action=>"sport_events",:id=>sport.id%>
 	 </li>
   <% end %>
 <% end %>

@@ -5,11 +5,57 @@
 <body>
 <h3> Edit Event </h3>
 <ul>
-<% if !@event.nil? %>
+<h4 style ="color:red">  <%= flash[:notice]%> </h4><br/>
+
+<% if !@event[0].nil? %>
 Sport Name : <%= Sport.find_by_id(@event[0].sport_id).name %> <br />
 Event : <%= @event[0].event_name %> <br />
 Round : <%= @event[0].round_name %> <br />
+
+<%= form_tag "add_winner/#{@event[0].id}",:method => 'post' do %>
+<h3> Participating Country </h3> 
+<select multiple name="country[]" id="countrymultiple" rows ="50">
+<%Country.all.each do |country| %>
+<%unless @participant_id.blank?%>
+  <%if @participant_id.include?(country.id)%>
+   <option value=<%= country.id%> selected><%= country.name%></option>
+   <%else%>
+   <option value=<%= country.id%>><%= country.name%></option>
+  <%end%>
+  <%else%>
+   <option value=<%= country.id%>><%= country.name%></option>
+  <%end%>
+ <%end %>
+</select>
+
+
+<h3> Winner Country </h3> 
+Gold Medal :
+<% if !@gold_winner.nil? %>
+<%= select_tag("country_gold[country2]", options_from_collection_for_select(Country.find(:all), "id", "name", @gold_winner.id )) %><br /> <br />
+<% else %>
+<%= select_tag("country_gold[country2]", options_from_collection_for_select(Country.find(:all), "id", "name" ),{:prompt=>'Select'}) %><br /> <br />
 <% end %>
+Silver Medal : 
+<% if !@silver_winner.nil? %>
+<%= select_tag("country_silver[country2]", options_from_collection_for_select(Country.find(:all), "id", "name", @silver_winner.id)) %><br /> <br />
+<% else %>
+<%= select_tag("country_silver[country2]", options_from_collection_for_select(Country.find(:all), "id", "name" ),{:prompt=>'Select'}) %><br /> <br />
+<% end %>
+
+
+Bronze Medal :  
+<% if !@bronze_winner.nil? %>
+<%= select_tag("country_bronze[country2]", options_from_collection_for_select(Country.find(:all), "id", "name", @bronze_winner.id)) %><br /> <br />
+<% else %>
+<%= select_tag("country_bronze[country2]", options_from_collection_for_select(Country.find(:all), "id", "name" ),{:prompt=>'Select'}) %><br /> <br />
+<% end %>
+
+<%= submit_tag "Submit", :name => nil %>
+
+<% end %>
+<% end %>
+
 </ul>
 </body>
 </html>

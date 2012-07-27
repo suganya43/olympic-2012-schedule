@@ -3,9 +3,11 @@ Olympic::Application.routes.draw do
 root :to => 'event#index'
 match '/event/index', :to=>'event#index'
 match '/event/sports', :to=>'event#sports'
+match '/event/sport_events', :to=>'event#sport_events'
 match '/event/country', :to=>'event#country'
 match '/event/events', :to=>'event#events'
 match '/event/event_edit', :to=>'event#event_edit'
+match '/event/add_winner/:id', :to=>'event#add_winner'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
